@@ -2,15 +2,17 @@ import os
 
 from flask import Flask, request
 from flask import render_template
+from model import mock_data
 from model.mock_data import Auction
-
-
 app = Flask(__name__)
+
 auction=Auction()
+
+artist = mock_data.getDummyArtist()
 
 @app.route('/')
 def home():
-    return render_template('index.html',timeToBid = auction.timeToBid)
+    return render_template('index.html',timeToBid = auction.timeToBid,artist = artist)
 
 @app.route('/login',methods=['POST'])
 def login():
@@ -20,7 +22,7 @@ def login():
 
     username=request.form['username']
     password=request.form['password']
-    return render_template('index.html',timeToBid = auction.timeToBid,username = username)
+    return render_template('index.html',timeToBid = auction.timeToBid,artist = artist, username = username)
 
 @app.route('/robots.txt')
 def robots():
