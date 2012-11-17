@@ -16,6 +16,7 @@ Para correr localmente
 
 Instalar python 2.7
 Instalar pip / easy_install
+Instalar Postgres
 
 Clone al proyecto
 
