@@ -10,6 +10,9 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route('/hello')
+def helloWorld():
+    return "Hello world"
 
 @app.route('/robots.txt')
 def robots():
