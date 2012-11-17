@@ -2,13 +2,16 @@ import os
 
 from flask import Flask
 from flask import render_template
+from model.mock_data import Auction
 
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    auction=Auction.new
+
+    return render_template('index.html',time = auction.time)
 
 @app.route('/hello')
 def helloWorld():
