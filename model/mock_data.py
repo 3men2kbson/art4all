@@ -8,7 +8,7 @@ class Auction(threading.Thread):
 
     timeToBid = (60*60*24)
     #timeToBid = (20)
-    actualValue=500000
+    actualValue=200000
     canBid=True
 
     def __init__(self):

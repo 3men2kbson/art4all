@@ -40,6 +40,7 @@ function pushBid(){
             alert("primero selecciona el valor a aumentar");
         }else{
             $.get('/bid/'+this.valueToBid);
+            $('#ourprice').load('/getMiValue');
             this.valueToBid = 0;
         }
     }else{
@@ -50,4 +51,4 @@ function pushBid(){
 var auto_refresh = setInterval(
     function () {
         $('#priceact').load('/getValue');
-    }, 1500);
+    }, 1000);

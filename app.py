@@ -32,6 +32,10 @@ def bid(value):
 def getValue():
     return '<h2>'+str(auction.actualValue)+'$</h2><h4>Precio Actual</h4>'
 
+@app.route("/getMiValue")
+def getValue():
+    return '<h2>'+str(auction.actualValue)+'$</h2><h4>Nuestro Actual</h4>'
+
 @app.route('/robots.txt')
 def robots():
     res = app.make_response('User-agent: *\nAllow: /')
