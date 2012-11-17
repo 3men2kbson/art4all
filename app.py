@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 from model.mock_data import Auction
 
@@ -12,9 +12,15 @@ auction=Auction()
 def home():
     return render_template('index.html',timeToBid = auction.timeToBid)
 
-@app.route('/hello')
-def helloWorld():
-    return "Hello world"
+@app.route('/login',methods=['POST'])
+def login():
+
+    for value in request.form:
+        print value
+
+    username=request.form['username']
+    password=request.form['password']
+    return render_template('index.html',timeToBid = auction.timeToBid,username = username)
 
 @app.route('/robots.txt')
 def robots():
