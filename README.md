@@ -11,3 +11,15 @@ Usage
  - `heroku create`
  - `heroku addons:add heroku-postgresql:dev`
  - `git push heroku master`
+
+Para correr localmente
+
+Instalar python 2.7
+Instalar pip / easy_install
+Instalar Postgres
+
+Clone al proyecto
+
+pip install -r requirements.txt
+
+python app.py
