@@ -7,6 +7,7 @@ __author__ = 'yamit'
 class Auction(threading.Thread):
 
     timeToBid = (60*60*24)
+    #timeToBid = (20)
     actualValue=500000
     canBid=True
 
@@ -20,6 +21,9 @@ class Auction(threading.Thread):
             if(self.timeToBid == 0):
                 self.canBid=False
             time.sleep(1)
+
+    def addBid(self,value):
+        self.actualValue = self.actualValue + int(value)
 
 def getDummyArtist():
     artist = Artist()

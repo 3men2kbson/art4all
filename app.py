@@ -24,6 +24,14 @@ def login():
     password=request.form['password']
     return render_template('index.html',timeToBid = auction.timeToBid,artist = artist, username = username)
 
+@app.route("/bid/<value>")
+def bid(value):
+    auction.addBid(value)
+
+@app.route("/getValue")
+def getValue():
+    return '<h2>'+str(auction.actualValue)+'$</h2><h4>Precio Actual</h4>'
+
 @app.route('/robots.txt')
 def robots():
     res = app.make_response('User-agent: *\nAllow: /')
