@@ -6,12 +6,11 @@ from model.mock_data import Auction
 
 
 app = Flask(__name__)
+auction=Auction()
 
 @app.route('/')
 def home():
-    auction=Auction.new
-
-    return render_template('index.html',time = auction.time)
+    return render_template('index.html',timeToBid = auction.timeToBid)
 
 @app.route('/hello')
 def helloWorld():

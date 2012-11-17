@@ -1,13 +1,22 @@
+import threading
+import time
+
 __author__ = 'yamit'
 
-class Auction():
+class Auction(threading.Thread):
 
-    time = 60*60*24
+    timeToBid = (60*60*24)-5
     actualValue=500000
+    canBid=True
 
-    def getStringDate(self):
-        oneHour=60*60
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.start()
 
-        hours=self.time/oneHour
-        secs=self.time%oneHour
+    def run(self):
+        while self.canBid:
+            self.timeToBid = self.timeToBid -1
+            if(self.timeToBid == 0):
+                self.canBid=False
+            time.sleep(1)
 

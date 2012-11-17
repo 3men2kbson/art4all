@@ -25,7 +25,7 @@
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
         <script src="../static/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     </head>
-    <body>
+    <body onload="updateClock({{ timeToBid }})">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
@@ -92,7 +92,7 @@
 </div>
 <div class="row infopuja">
 <div class="timeres">
-<h2>{{ time }}</h2>
+<h2 id="time"/>
 <h4>Tiempo Restante</h4>
 </div>
 <div class="priceact">
@@ -125,6 +125,7 @@
 
         <script src="../static/js/plugins.js"></script>
         <script src="../static/js/main.js"></script>
+        <script src="../static/js/helper.js"></script>
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
