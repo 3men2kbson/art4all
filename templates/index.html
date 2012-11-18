@@ -32,7 +32,6 @@
         <![endif]-->
 
 <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container_12">
@@ -74,6 +73,7 @@
 </div>
 
 <div class="container_12">
+
     <div class="grid_12">
 
     </div>
@@ -83,28 +83,33 @@
 <div class="row infoblack">
     <div class="container_12">
         <div class="grid_12">
-            <div class="row puja">
-                <div class="barrapuja">
-                    <div class="grid_2 bolita" onclick="addBid(10000)">
+            <div class="barrapuja">
+                <div class="pujahole"></div>
+                <div class="progress pujabar">
+                    <div class="bar" id="amountbar"></div>
+                </div>
+                <div class="pricecontainer">
+                    <div class="grid_2" onclick="addBid(10000)">
                         <div class="preciopuja" id="price1"></div>
                     </div>
-                    <div class="grid_2 bolita" onclick="addBid(20000)">
+                    <div class="grid_2" onclick="addBid(20000)">
                         <div class="preciopuja" id="price2"></div>
                     </div>
-                    <div class="grid_2 bolita" onclick="addBid(30000)">
+                    <div class="grid_2" onclick="addBid(30000)">
                         <div class="preciopuja" id="price3"></div>
                     </div>
-                    <div class="grid_2 bolita" onclick="addBid(40000)">
+                    <div class="grid_2" onclick="addBid(40000)">
                         <div class="preciopuja" id="price4"></div>
                     </div>
-                    <div class="grid_2 bolita" onclick="addBid(50000)">
+                    <div class="grid_2" onclick="addBid(50000)">
                         <div class="preciopuja" id="price5"></div>
                     </div>
-                    <div class="grid_2 bolita" onclick="addBid(60000)">
+                    <div class="grid_2" onclick="addBid(60000)">
                         <div class="preciopuja" id="price6"></div>
                     </div>
-
                 </div>
+            </div>
+            <div class="row puja">
                 <div class="row infopuja">
                     <div class="timeres">
                         <h2 id="time"/>

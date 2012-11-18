@@ -31,15 +31,15 @@ function manageClock() {
 
 function addBid(value) {
     this.valueToBid = value;
-    //TODO colorear barra
-    alert(value);
+    $('#amountbar').width(80*(((value/10000)*2)-1)); //to cast to number
+    console.log($('#amountbar').width());
 }
 function pushBid() {
     if (canBid) {
         if (this.valueToBid === 0) {
             alert("primero selecciona el valor a aumentar");
         } else {
-            $.get('/bid/' + this.valueToBid);
+            $.post('/bid/' + this.valueToBid);
             $('#ourprice').load('/getMiValue');
             //update prices to bid
             //   for(i =0; i<6;i++){
