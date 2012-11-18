@@ -42,7 +42,7 @@ class Auction(threading.Thread):
 
 def getDummyArtist():
     artist = Artist()
-    artist.name='MANUEL CALDERON'
+    artist.name='JUANA BOTERO'
     artist.pictureUrl='../static/img/artist.jpg'
     #artist.pictureUrl='http://www.laparaulatailustrada.com/wp-content/uploads/2010/10/juancalzadilla_jpg.jpg'
     artist.description=''

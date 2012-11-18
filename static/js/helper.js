@@ -50,6 +50,10 @@ function pushBid() {
     }
 }
 
+function sendArtist(){
+    $.get('/artist');
+}
+
 var auto_refresh = setInterval(
     function () {
         $('#priceact').load('/currentPrice');

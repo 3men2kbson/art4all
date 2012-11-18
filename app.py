@@ -58,11 +58,15 @@ def robots():
     res.mimetype = 'text/plain'
     return res
 
+@app.route('/artist')
+def artist():
+    return render_template('artist.html')
+
 @app.route("/reset/value/bid")
 def resetValue():
     auction.actualValue = 200000
     return render_template('index.html',timeToBid = auction.timeToBid,artist = artist,priceNow = auction.priceNow)
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 4000))
+    port = int(os.environ.get('PORT', 3000))
     app.run(host='0.0.0.0', port=port, debug=True)
