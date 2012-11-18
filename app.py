@@ -24,17 +24,19 @@ def login():
     password=request.form['password']
     return render_template('index.html',timeToBid = auction.timeToBid,artist = artist, username = username)
 
-@app.route("/bid/<value>")
+@app.route("/bid/<value>",methods=['POST'])
 def bid(value):
     auction.addBid(value)
 
-@app.route("/getValue")
-def getValue():
-    return '<h2>'+str(auction.actualValue)+'$</h2><h4>Precio Actual</h4>'
-
 @app.route("/getMiValue")
 def getValue():
-    return '<h2>'+str(auction.actualValue)+'$</h2><h4>Nuestro Precio</h4>'
+    data = '<h2>'+str(auction.actualValue)+'$</h2><h4>Nuestro Precio</h4>'
+    return data
+
+@app.route("/currentPrice")
+def currentPrice():
+    data ='<h2>'+str(auction.actualValue)+'$</h2><h4>Precio Actual</h4>'
+    return data
 
 @app.route("/getFuturePrice/<value>")
 def getFuturePrice(value):
@@ -51,5 +53,5 @@ def robots():
 
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5001))
+    port = int(os.environ.get('PORT', 5002))
     app.run(host='0.0.0.0', port=port, debug=True)

@@ -54,7 +54,7 @@ function pushBid() {
 
 var auto_refresh = setInterval(
     function () {
-        $('#priceact').load('/getValue');
+        $('#priceact').load('/currentPrice');
         //update prices to bid
         for (i = 1; i <= 6; i++) {
             $('#price' + i).load('/getFuturePrice/' + i);
