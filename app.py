@@ -58,6 +58,9 @@ def robots():
     res.mimetype = 'text/plain'
     return res
 
+@app.route("/reset/value/bid")
+def resetValue():
+    auction.actualValue = 200000
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 4000))
