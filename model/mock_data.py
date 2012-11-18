@@ -10,8 +10,11 @@ class Auction(threading.Thread):
     #timeToBid = (20)
     actualValue=200000
     canBid=True
+    pricesList = [10000,20000,30000,40000,50000,60000]
+    pricesInterval = [0,0,0,0,0,0]
 
     def __init__(self):
+        self.getPriceInterval()
         threading.Thread.__init__(self)
         self.start()
 
@@ -23,7 +26,18 @@ class Auction(threading.Thread):
             time.sleep(1)
 
     def addBid(self,value):
-        self.actualValue = self.actualValue + int(value)
+        self.actualValue += int(value)
+        #update
+        self.getPriceInterval()
+
+    def getPriceInterval(self):
+
+        i=0
+        for price in self.pricesList:
+            newValue = self.actualValue+price
+            self.pricesInterval[i]=newValue
+            i+=1
+        return self.pricesInterval
 
 def getDummyArtist():
     artist = Artist()

@@ -1,5 +1,5 @@
 function secondsToString(seconds) {
-    if(canBid){
+    if (canBid) {
         var numhours = Math.floor((seconds ) / 3600);
         var numminutes = Math.floor(((seconds ) % 3600) / 60);
         var numseconds = ((seconds) % 3600) % 60;
@@ -10,7 +10,7 @@ function secondsToString(seconds) {
 
 var canBid = true;
 var seconds;
-var valueToBid=0;
+var valueToBid = 0;
 
 function updateClock(seconds) {
     this.seconds = seconds;
@@ -30,20 +30,24 @@ function manageClock() {
 }
 
 function addBid(value) {
-        this.valueToBid= value;
-        //TODO colorear barra
-        alert(value);
+    this.valueToBid = value;
+    //TODO colorear barra
+    alert(value);
 }
-function pushBid(){
-    if(canBid){
-        if(this.valueToBid===0){
+function pushBid() {
+    if (canBid) {
+        if (this.valueToBid === 0) {
             alert("primero selecciona el valor a aumentar");
-        }else{
-            $.get('/bid/'+this.valueToBid);
+        } else {
+            $.get('/bid/' + this.valueToBid);
             $('#ourprice').load('/getMiValue');
+            //update prices to bid
+            //   for(i =0; i<6;i++){
+            //     $('#oprice'+i).load('/getPrice/'+i);
+            //}
             this.valueToBid = 0;
         }
-    }else{
+    } else {
         alert("lo sentimos se acabo el tiempo");
     }
 }
@@ -51,4 +55,8 @@ function pushBid(){
 var auto_refresh = setInterval(
     function () {
         $('#priceact').load('/getValue');
+        //update prices to bid
+        for (i = 1; i <= 6; i++) {
+            $('#price' + i).load('/getFuturePrice/' + i);
+        }
     }, 1000);

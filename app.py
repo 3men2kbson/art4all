@@ -34,7 +34,14 @@ def getValue():
 
 @app.route("/getMiValue")
 def getValue():
-    return '<h2>'+str(auction.actualValue)+'$</h2><h4>Nuestro Actual</h4>'
+    return '<h2>'+str(auction.actualValue)+'$</h2><h4>Nuestro Precio</h4>'
+
+@app.route("/getFuturePrice/<value>")
+def getFuturePrice(value):
+    index = int(value)
+    data = auction.pricesInterval[index-1]
+    return str(data)
+
 
 @app.route('/robots.txt')
 def robots():
@@ -42,6 +49,7 @@ def robots():
     res.mimetype = 'text/plain'
     return res
 
+
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 5001))
     app.run(host='0.0.0.0', port=port, debug=True)
