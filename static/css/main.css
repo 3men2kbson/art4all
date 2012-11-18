@@ -246,18 +246,24 @@ border-top: 1px solid #837E7E;
 	width: 153px;
 	float: left;
 	color: white;
+    margin-top: -35px;
+    text-align: left;
 
 }
 .btndes {
 	width: 153px;
 	float: left;
 	color: white;
+    margin-top: -35px;
+    text-align: center;
 
 }
 .btnartis {
 	width: 153px;
 	float: left;
 	color: white;
+    margin-top: -35px;
+    text-align: right;
 }
 
 .titledes {
