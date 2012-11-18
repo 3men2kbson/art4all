@@ -61,6 +61,7 @@ def robots():
 @app.route("/reset/value/bid")
 def resetValue():
     auction.actualValue = 200000
+    return render_template('index.html',timeToBid = auction.timeToBid,artist = artist,priceNow = auction.priceNow)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 4000))
