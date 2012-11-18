@@ -33,6 +33,7 @@ function addBid(value) {
     this.valueToBid = value;
     $('#amountbar').width(80*(((value/10000)*2)-1)); //to cast to number
     console.log($('#amountbar').width());
+    $('#ourprice').load('/calcFutureValue/'+value);
 }
 function pushBid() {
     if (canBid) {

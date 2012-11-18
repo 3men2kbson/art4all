@@ -12,6 +12,7 @@ class Auction(threading.Thread):
     canBid=True
     pricesList = [10000,20000,30000,40000,50000,60000]
     pricesInterval = [0,0,0,0,0,0]
+    priceNow = 1000000
 
     def __init__(self):
         self.getPriceInterval()
@@ -41,7 +42,7 @@ class Auction(threading.Thread):
 
 def getDummyArtist():
     artist = Artist()
-    artist.name='Juan Calzadilla'
+    artist.name='JUANA BOTERO'
     artist.pictureUrl='../static/img/artist.jpg'
     #artist.pictureUrl='http://www.laparaulatailustrada.com/wp-content/uploads/2010/10/juancalzadilla_jpg.jpg'
     artist.description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dui erat, auctor in viverra at, pharetra eu ligula. Nullam interdum, quam vel malesuada congue, tellus est adipiscing neque, id consequat enim augue sed orci. Fusce sit amet augue sit amet leo convallis dignissim ut sed mi. Nunc aliquet sodales velit vel aliquet. Curabitur id massa ac erat feugiat porttitor. Vestibulum et orci aliquam.'
