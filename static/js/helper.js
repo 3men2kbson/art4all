@@ -41,6 +41,7 @@ function pushBid() {
         } else {
             $.post('/bid/' + this.valueToBid);
             $('#ourprice').load('/getMiValue');
+            $('#amountbar').width(0);
             //update prices to bid
             //   for(i =0; i<6;i++){
             //     $('#oprice'+i).load('/getPrice/'+i);
